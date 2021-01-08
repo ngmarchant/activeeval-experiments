@@ -1,6 +1,6 @@
 # Experiments for "A general framework for label efficient online evaluation with asymptotic guarantees"
 
-This folder contains files required to reproduce the experiments for the 
+This repository contains files required to reproduce the experiments for the 
 following paper:
 
 > N. G. Marchant and  B. I. P. Rubinstein. (2020) "A general framework for 
