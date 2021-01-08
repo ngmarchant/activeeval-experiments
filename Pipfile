@@ -1,0 +1,23 @@
+[[source]]
+name = "pypi"
+url = "https://pypi.org/simple"
+verify_ssl = true
+
+[dev-packages]
+
+
+[packages]
+activeeval = {git = "https://github.com/ngmarchant/activeeval.git", editable = true, ref = "v0.1.2"}
+numpy = "==1.18.5"
+scipy = "==1.4.1"
+scikit-learn = "==0.22.2"
+tables = "==3.6.1"
+matplotlib = "==3.2.2"
+treelib = "==1.6.1"
+oasis = "*"
+pathos = "==0.2.6"
+pandas = "==1.0.5"
+seaborn = "==0.11.1"
+
+[requires]
+python_version = "3.8"

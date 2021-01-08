@@ -9,7 +9,8 @@ label efficient online evaluation with asymptotic guarantees".
 ## Datasets
 
 All seven data sets are included in the `datasets` directory in HDF5 format. 
-Each data set may contain the arrays:
+Each data set may contain the following variables:
+
 * `features`: feature vectors
 * `labels`: ground truth labels
 * `scores`: real-valued classifier scores, e.g. distance from the decision 
@@ -19,16 +20,11 @@ Each data set may contain the arrays:
 
 ## Dependencies
 
-The main dependency is the `activeeval` Python package, which implements 
-our method as well as static importance sampling and passive sampling. 
-The source code for `activeeval` is included under the `activeeval` directory. 
-It can be installed by running:
-
-```bash
-$ pip install activeeval
-```
-
+The main dependency is the [ActiveEval](https://github.com/ngmarchant/activeeval) 
+Python package, which implements our method as well as static importance 
+sampling and passive sampling. 
 Other dependencies include:
+
 * `numpy`
 * `pandas`
 * `scipy`
@@ -38,22 +34,42 @@ Other dependencies include:
 * `oasis` (implementation of the OASIS evaluation method)
 * `pathos` (for parallelizing experiments)
 
-## Scripts
-
-The experiments can be reproduced by running the `run-*.py` scripts in the 
-root directory, e.g. 
+We recommend managing dependencies in a Python virtual environment using 
+[Pipenv](https://pipenv.pypa.io). The included `Pipfile` and `Pipfile.lock` 
+files specify all dependencies and their versions. Assuming Pipenv is 
+installed, you can initialize the virtual environment by running the 
+following command from the root of this repository:
 
 ```bash
-$ python run_f1-score.py
+$ pipenv sync
+```
+
+## Scripts
+
+The experiments can be reproduced by executing the `run-*.py` scripts in the 
+root of this repository. First, ensure the virtual environment has been 
+initialized according to the instructions under "Dependencies". Then enter 
+the virtual environment by executing the following from the root of 
+the repository:
+
+```bash
+pipenv shell
+```
+
+Now you're ready to run the scripts. To run the experiments for F1-score, 
+execute the following:
+
+```bash
+(activeeval-experiments) $ python run_f1-score.py
 ```
 
 Each script runs the experiments for a different target measure: `accuracy`, 
-`f1-score` or `pr-curve` (precision-recall curve). Multiple combinations of 
-datasets and methods are tested for each measure, with the evaluation for 
-each combination being repeated 1000 times (to assess convergence 
-statistically). The repeated evaluations are parallelized over 20 workers 
-using the `pathos` library. The number of workers can be changed by modifying 
-the `n_processes` variable in each script.
+`f1-score` or `pr-curve` (precision-recall curve). Multiple datasets and 
+methods are evaluated for each measure, with the evaluation for 
+each measure/dataset/method being repeated 1000 times. The repeated 
+evaluations are parallelized over 20 workers using the `pathos` library. 
+The number of workers can be changed by modifying the `n_processes` variable 
+in each script.
 
 
 ### Output
