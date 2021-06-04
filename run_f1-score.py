@@ -50,8 +50,8 @@ map_data_name = {'abt-buy-svm': 'abt-buy',
                  'tweets100k-svm': 'tweets100k'}
 
 n_queries = [50]*100
-n_repeats = 1000
-n_processes = 20
+n_repeats = 100
+n_processes = 4
 tree_depth = 8
 n_children = 2
 max_error = 1

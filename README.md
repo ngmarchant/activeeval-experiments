@@ -72,8 +72,8 @@ execute the following:
 Each script runs the experiments for a different target measure: `accuracy`, 
 `f1-score` or `pr-curve` (precision-recall curve). Multiple datasets and 
 methods are evaluated for each measure, with the evaluation for 
-each measure/dataset/method being repeated 1000 times. The repeated 
-evaluations are parallelized over 20 workers using the `pathos` library. 
+each measure/dataset/method being repeated 100 times. The repeated 
+evaluations are parallelized across 4 workers using the `pathos` library. 
 The number of workers can be changed by modifying the `n_processes` variable 
 in each script.
 
