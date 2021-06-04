@@ -1,4 +1,4 @@
-# Experiments for "A general framework for label efficient online evaluation with asymptotic guarantees"
+# Needle in a Haystack: Label-Efficient Evaluation Under Extreme Class Imbalance
 
 This repository contains files required to reproduce the experiments for the 
 following paper:
